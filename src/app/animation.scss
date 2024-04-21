@@ -1,0 +1,201 @@
+@use "sass:color";
+
+$colors: (
+    "green": hsl(123, 47%, 74%),
+    "blue": hsl(210, 47%, 74%),
+    "orange": hsl(310, 47%, 74%),
+    "purple": hsl(270, 47%, 74%),
+    "yellow": hsl(60, 47%, 74%),
+    "brown": hsl(390, 47%, 74%),
+    "red": hsl(0, 47%, 74%),
+    "pink": hsl(300, 47%, 74%),
+    "white": hsl(0, 0%, 100%)
+);
+
+:root {
+    @each $name, $value in $colors {
+        --#{$name}-light: #{$value};
+        --#{$name}-dark: #(color.adjust($value, $lightness: -40%));
+    }
+}
+
+.orbit {
+    --size: 8rem;
+    --speed: 120s;
+
+    .center-img {
+        width: var(--size);
+        position: relative;
+        top: -50%;
+
+        // }
+    }
+
+    ul {
+        display: grid;
+        place-items: center;
+        position: relative;
+        list-style: none;
+        width: var(--size);
+        height: var(--size);
+        --icon-bg: var(--green-light);
+        --text-bg: var(--orange-dark);
+        transform-origin: center;
+        animation: orbit var(--speed) linear infinite;
+        &:hover {
+            animation-play-state: paused;
+            & * {
+                animation-play-state: paused;
+            }
+        }
+    }
+
+    li {
+        --icon-bg: pink;
+        --text-bg: blue;
+        position: absolute;
+        // opacity: 0; //
+        width: 4rem;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 1;
+        font-weight: 500;
+        // overflow: hidden;
+        color: var(--white-light);
+        border: 1px solid;
+        display: grid;
+        place-items: center;
+
+        & > * {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            place-items: center;
+            border-radius: inherit;
+            animation: orbit 120s linear reverse infinite;
+        }
+        > div {
+            background-color: var(--icon-bg);
+        }
+
+        > p {
+            background-color: var(--text-bg);
+            opacity: 0;
+            // display: none;
+            font-size: 0.7rem;
+            transition: opacity 500s;
+            cursor: pointer;
+        }
+
+        &:hover p {
+            opacity: 1;
+            // display: grid;
+        }
+        // &:hover > div {
+        //     display: none;
+        // }
+    }
+
+    li:first-child {
+        --icon-bg: var(--blue-light);
+        --text-bg: var(--blue-dark);
+        transform: translate(12rem, 0);
+    }
+
+    li:nth-child(2) {
+        --icon-bg: var(--green-light);
+        --text-bg: var(--green-dark);
+        transform: translate(9rem, 9rem);
+    }
+
+    li:nth-child(3) {
+        --icon-bg: var(--pink-light);
+        --text-bg: var(--pink-dark);
+        transform: translate(0, 12rem);
+    }
+
+    li:nth-child(4) {
+        --icon-bg: var(--red-light);
+        --text-bg: var(--red-dark);
+        transform: translate(-9rem, 9rem);
+    }
+
+    li:nth-child(5) {
+        --icon-bg: var(--brown-light);
+        --text-bg: var(--brown-dark);
+        transform: translate(-12rem, 0);
+    }
+
+    li:nth-child(6) {
+        --icon-bg: var(--yellow-light);
+        --text-bg: var(--yellow-dark);
+        transform: translate(-9rem, -9rem);
+    }
+
+    li:nth-child(7) {
+        --icon-bg: var(--purple-light);
+        --text-bg: var(--purple-dark);
+        transform: translate(0, -12rem);
+    }
+
+    li:nth-child(8) {
+        --icon-bg: var(--orange-light);
+        --text-bg: var(--orange-dark);
+        transform: translate(9rem, -9rem);
+    }
+
+    @media (width<= 780px) {
+        ul{
+            display: none;
+        }
+        .center-img{
+            width: 12rem;
+            position: unset;
+        }
+    
+    }
+}
+
+@keyframes orbit {
+    100% {
+        rotate: 1turn;
+    }
+}
+
+// @keyframes throb {
+//     100% {
+//         scale: 1.1rem;
+//     }
+// }
+
+.navbar.active{
+    background-color: #70a0d0;
+    color: #fff;
+    .social_icon:hover{
+        color: #fa0707;
+    }
+    .nav_item:hover{
+        color: #fa0707;
+        border-bottom: 2px solid #fa0707;
+    }
+}
+
+.scroll-watcher{
+    height: 3px;
+    position: fixed;
+    top: 0;
+    z-index: 10000;
+    background-color: rgb(255, 85, 0);
+    width: 100%;
+    scale: 0 1;
+    transform-origin: left;
+    animation: scroll-watcher linear ;
+    animation-timeline: scroll();
+}
+
+
+@keyframes scroll-watcher {
+    to {scale: 1 1;}
+}
