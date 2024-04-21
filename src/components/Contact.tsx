@@ -39,7 +39,7 @@ function Contact() {
 
                 </div>
                 <div className="border p-3 rounded-lg bg-slate-100 dark:bg-transparent">
-                    <form action="mailto:sk7627577@gmail.com" method="post" encType="text/plain" autoComplete="false">
+                    <form>
                         <div className="flex flex-col gap-3">
                             <label htmlFor="name" className="capitalize mb-0">Name*</label>
                             <input

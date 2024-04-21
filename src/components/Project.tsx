@@ -29,9 +29,9 @@ function Project() {
                 </div>
                 <div className='w-full py-8'>
                     {projects.map((item: projects, index) => (
-                        <div key={item.id} className={`lg:flex items-center my-2 justify-between gap-5 w-full ${index % 2 !== 0 ? "lg:flex-row-reverse" : ""}`}>
+                        <div key={item.id} className={`lg:flex items-center my-4 border rounded-lg overflow-hidden justify-between gap-5 w-full ${index % 2 !== 0 ? "lg:flex-row-reverse" : ""}`}>
                             <Image src={item.imgUrl} alt="alt" width={500} height={500} priority className='bg-red-600' />
-                            <div className='w-full'>
+                            <div className='w-full p-3'>
                                 <div><h3 dangerouslySetInnerHTML={{ __html: item.title }}></h3></div>
                                 <div><p dangerouslySetInnerHTML={{ __html: item.description }}></p></div>
                             </div>
