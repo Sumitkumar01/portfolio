@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import '@/app/animation.scss'
 import NavBar from "@/components/NavBar";
-// import ScrollToTop from "@/components/ScrollToTop";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,7 +22,7 @@ export default function RootLayout({
       <body suppressHydrationWarning={true} className={inter.className}>
         <NavBar/>
         {children}
-        {/* <ScrollToTop/> */}
+        <ScrollToTop/>
         </body>
     </html>
   );
