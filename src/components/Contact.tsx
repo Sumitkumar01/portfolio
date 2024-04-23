@@ -19,7 +19,7 @@ function Contact() {
                 <div className="flex flex-col gap-3 md:items-start  items-center">
                     <h3 className="md:text-2xl text-base font-semibold tracking-wide capitalize dark:text-[#70a0d0] text-[#2F4F4F]">Lets connect together!</h3>
                     <div className="">
-                        <ul className="flex flex-col gap-2 md:items-start  items-cente">
+                        <ul className="flex flex-col gap-2 md:items-start  items-cente md:text-base text-sm">
                             <li className="">
                                 Gmail:{" "}
                                 <Link href={"mailto:sk762577@gmail.com"}>
@@ -30,7 +30,7 @@ function Contact() {
                         </ul>
                     </div>
 
-                    <p className="md:text-justify text-center py-3">
+                    <p className="md:text-justify text-center md:text-base text-sm py-3">
                         &#34;Connecting with fellow developers, designers, and tech
                         enthusiasts is a passion of mine. Don&apos;t hesitate to reach
                         out—I&apos;m always eager to collaborate and build something

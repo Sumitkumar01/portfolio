@@ -50,8 +50,13 @@ function Skills() {
                 </div>
                 <div className='flex flex-wrap items-center justify-center md:gap-20 gap-4 md:p-8 p-2'>
                     {skills.map((skill, i) => (
-                        <div key={i} className='p-5 rounded-lg flex items-center justify-center dark:bg-gray-800 text-4xl bg-[#70a0d0] text-white'>
-                            {skill.imgurl}
+                        <div className='flex flex-col items-center justify-center gap-2' key={i}>
+                            <div  className='p-5 rounded-lg flex items-center justify-center dark:bg-gray-800 text-4xl bg-[#70a0d0] text-white'>
+                                {skill.imgurl}
+                            </div>
+                            <div>
+                                <p className='capitalize text-sm'>{skill.title}</p>
+                            </div>
                         </div>
                     ))}
                 </div>

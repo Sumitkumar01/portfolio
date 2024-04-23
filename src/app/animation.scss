@@ -17,6 +17,12 @@ $colors: (
         --#{$name}-light: #{$value};
         --#{$name}-dark: #(color.adjust($value, $lightness: -40%));
     }
+
+    --clr-1: #052b2f;
+    --clr-2: #073438;
+    --clr-3: #0e4b50;
+    --clr-4: #2d8f58;
+    --clr-5: #367c54;
 }
 
 .orbit {
@@ -147,14 +153,13 @@ $colors: (
     }
 
     @media (width<= 780px) {
-        ul{
+        ul {
             display: none;
         }
-        .center-img{
+        .center-img {
             width: 12rem;
             position: unset;
         }
-    
     }
 }
 
@@ -170,19 +175,19 @@ $colors: (
 //     }
 // }
 
-.navbar.active{
+.navbar.active {
     background-color: #70a0d0;
     color: #fff;
-    .social_icon:hover{
+    .social_icon:hover {
         color: #fa0707;
     }
-    .nav_item:hover{
+    .nav_item:hover {
         color: #fa0707;
         border-bottom: 2px solid #fa0707;
     }
 }
 
-.scroll-watcher{
+.scroll-watcher {
     height: 3px;
     position: fixed;
     top: 0;
@@ -191,11 +196,57 @@ $colors: (
     width: 100%;
     scale: 0 1;
     transform-origin: left;
-    animation: scroll-watcher linear ;
+    animation: scroll-watcher linear;
     animation-timeline: scroll();
 }
 
-
 @keyframes scroll-watcher {
-    to {scale: 1 1;}
+    to {
+        scale: 1 1;
+    }
+}
+
+@property --gradient-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.card {
+    height: 5rem;
+    width: 5rem;
+    aspect-ratio: 1/1.5;
+    position: relative;
+    // z-index: 0;
+}
+
+.card::before,
+.card::after {
+    content: "";
+    position: absolute;
+    inset: -0.5rem;
+    z-index: -1;
+    background: conic-gradient(
+        from var(--gradient-angle),
+        var(--clr-3),
+        var(--clr-4),
+        var(--clr-5),
+        var(--clr-3),
+        var(--clr-4)
+    );
+    border-radius: inherit;
+    animation: rotation 20s linear infinite;
+}
+
+.card::after {
+    filter: blur(3.5rem);
+}
+
+@keyframes rotation {
+    0% {
+        --gradient-angle: 0deg;
+    }
+    100% {
+        --gradient-angle: 360deg;
+    }
 }

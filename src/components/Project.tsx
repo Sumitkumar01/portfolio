@@ -21,7 +21,7 @@ function Project() {
         <section id='project' className='pt-20 dark:bg-[#191970]/30 '>
             <div className='max-w-6xl mx-auto px-4'>
                 <div className='lg:grid lg:grid-cols-5 items-center justify-center'>
-                    <h2 className='text-4xl capitalize font-bold dark:text-[#70a0d0] text-[#2F4F4F]'>my Projects</h2>
+                    <h2 className='md:text-4xl text-2xl capitalize font-bold dark:text-[#70a0d0] text-[#2F4F4F]'>my Projects</h2>
                     <div className='col-span-4 md:ps-1'>
                         <div className='bg-[#70a0d0] w-full h-[1.5px]' />
                     </div>
@@ -29,8 +29,11 @@ function Project() {
                 </div>
                 <div className='w-full py-8'>
                     {projects.map((item: projects, index) => (
-                        <div key={item.id} className={`lg:flex items-center my-4 border rounded-lg overflow-hidden justify-between gap-5 w-full ${index % 2 !== 0 ? "lg:flex-row-reverse" : ""}`}>
-                            <Image src={item.imgUrl} alt="alt" width={500} height={500} priority className='bg-red-600' />
+                        <div key={item.id} className={`lg:flex items-center my-4 border shadow-2xl  dark:border-white/70 border-gray-500 rounded-lg overflow-hidden justify-between gap-5 w-full ${index % 2 !== 0 ? "lg:flex-row-reverse" : ""}`}>
+                            <div className="w-full">
+                                <Image src={item.imgUrl} alt="alt" width={550} height={500} priority className='bg-red-600 w-full' />
+
+                            </div>
                             <div className='w-full p-3'>
                                 <div><h3 dangerouslySetInnerHTML={{ __html: item.title }}></h3></div>
                                 <div><p dangerouslySetInnerHTML={{ __html: item.description }}></p></div>
