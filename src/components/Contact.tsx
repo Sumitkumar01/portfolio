@@ -15,7 +15,8 @@ function Contact() {
                 
                 <div className='bg-[#70a0d0] h-[1.5px] lg:w-[40%] lg:mt-0 mt-2' />
             </div>
-            <div className="lg:grid lg:grid-cols-2 items-center gap-5 max-w-6xl mx-auto px-4">
+            {/* <div className="lg:grid lg:grid-cols-2 items-center gap-5 max-w-6xl mx-auto px-4"> */}
+            <div className="flex items-center gap-5 max-w-6xl mx-auto px-4">
                 <div className="flex flex-col gap-3 md:items-start  items-center">
                     <h3 className="md:text-2xl text-base font-semibold tracking-wide capitalize dark:text-[#70a0d0] text-[#2F4F4F]">Lets connect together!</h3>
                     <div className="">
@@ -38,7 +39,7 @@ function Contact() {
                     </p>
 
                 </div>
-                <div className="border p-3 rounded-lg bg-slate-100 dark:bg-transparent">
+                <div className="border p-3 rounded-lg bg-slate-100 dark:bg-transparent hidden">
                     <form>
                         <div className="flex flex-col gap-3">
                             <label htmlFor="name" className="capitalize mb-0">Name*</label>
