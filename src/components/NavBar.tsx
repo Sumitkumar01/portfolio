@@ -97,7 +97,7 @@ function NavBar() {
                     ))}
                 </ul>
             </nav>}
-            <div className={`w-[3rem] h-[3rem] rounded-full fixed flex justify-center  items-center text-4xl duration-500  bottom-4 bg-[#70a0d0] ${navbar?"right-4":"-right-20"}`}>
+            <div className={`w-[3rem] h-[3rem] rounded-full fixed flex z-50 justify-center  items-center text-4xl duration-500  bottom-4 bg-[#70a0d0] ${navbar?"right-4":"-right-20"}`}>
             <button onClick={click}>
                 <FaArrowCircleUp />
                 {/* <span>Scroll to top</span> */}
