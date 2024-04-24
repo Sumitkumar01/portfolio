@@ -250,3 +250,74 @@ $colors: (
         --gradient-angle: 360deg;
     }
 }
+
+// ************project card aninmation *******
+.animate-card {
+    position: relative;
+    // overflow: hidden;
+    .links {
+        
+        height: 120px;
+        padding: 1rem 2rem;
+        box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.15);
+        background-color: #fff;
+        border-radius: 1rem;
+        position: absolute;
+        bottom: -9rem;
+        left: 0;
+        right: 0;
+        margin-inline: auto;
+        opacity: 0;
+        transition: opacity 1s 1s;
+    }
+    &:hover .links {
+        animation: show-data 1s forwards;
+        opacity: 1;
+        transition: opacity 0.3s;
+    }
+    &:hover{
+        animation: remove-overflow 2s forwards;
+    }
+    &:not(:hover) .links {
+        animation: remove-data 1s forwards;
+    }
+    &:not(:hover){
+        animation: show-overflow 2s forwards;
+    }
+}
+
+
+@keyframes show-data {
+    50%{
+        transform:  translateY(-10rem);
+    }
+    100%{
+        transform: translateY(-7rem);
+    }
+}
+@keyframes  remove-overflow{
+    to{
+        overflow: initial;
+    }
+}
+
+@keyframes remove-data {
+    0%{
+        transform: translateY(-7rem);
+    }
+    50%{
+        transform:  translateY(-10rem);
+    }
+    100%{
+        transform: translateY(.5rem);
+    }
+}
+@keyframes  show-overflow{
+    0%{
+        overflow: initial;
+        pointer-events: none;
+    }
+    50%{
+        overflow: hidden;
+    }
+}
