@@ -52,7 +52,7 @@ function NavBar() {
     return (
         <header>
             <div className="scroll-watcher"></div>
-            <div className={`fixed w-full z-10 pt-1 ${navbar ? 'navbar active' : "navbar"}`}>
+            <div className={`fixed w-full z-10 pt-1 duration-300 ${navbar ? 'navbar active' : "navbar"}`}>
                 <nav className='max-w-6xl mx-auto px-4 w-full'>
                     <div className='flex items-center justify-between gap-4 py-3'>
                         <Link href={"#home"} className='text-2xl dark:bg-gray-700  rounded-full font-semibold font-serif capitalize p-2 border-2 border-pink-600 flex items-center justify-center'>
@@ -84,7 +84,7 @@ function NavBar() {
 
             </div>
             {/* mobile nav */}
-            {open && <nav className='w-full h-full py-5 bg-blue-200 fixed z-10 '>
+            {open && <nav className='w-full h-full py-5 bg-blue-200 dark:bg-slate-700 fixed z-10 lg:hidden'>
                 <button className='p-2' onClick={()=> close(!open)}>
                     <span className="sr-only">menu_close</span>
                     <RiCloseLine className='text-3xl'/>
