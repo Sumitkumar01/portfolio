@@ -22,7 +22,7 @@ export default function RootLayout({
       <body suppressHydrationWarning={true} className={inter.className}>
         <NavBar/>
         {children}
-        <ScrollToTop/>
+        {/* <ScrollToTop/> */}
         </body>
     </html>
   );

@@ -7,6 +7,7 @@ import { SiLinkedin } from "react-icons/si";
 import { FaSquareGithub } from "react-icons/fa6";
 import { TiThMenu } from "react-icons/ti";
 import { RiCloseLine } from "react-icons/ri";
+import { FaArrowCircleUp } from "react-icons/fa";
 
 
 function NavBar() {
@@ -42,6 +43,11 @@ function NavBar() {
     useEffect(() => {
         window.addEventListener('scroll', changBg)
     })
+
+    const click = () =>{
+        window.scrollTo(0, 0);
+    }
+
 
     return (
         <header>
@@ -91,7 +97,12 @@ function NavBar() {
                     ))}
                 </ul>
             </nav>}
-
+            <div className={`w-[3rem] h-[3rem] rounded-full fixed flex justify-center  items-center text-4xl duration-500  bottom-4 bg-[#70a0d0] ${navbar?"right-4":"-right-20"}`}>
+            <button onClick={click}>
+                <FaArrowCircleUp />
+                {/* <span>Scroll to top</span> */}
+            </button>
+        </div>
         </header>
     )
 }
